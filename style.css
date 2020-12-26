@@ -1,18 +1,520 @@
-.bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-      }
-.main{background-color: #62978d;}
-.may{margin-bottom: 21%;
-    margin-left: 30%;
-    margin-right: 40%;
-    margin-top: 19%;}
-@media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
-      }
+                                                            
+                                                            /* ГЛАВНАЯ СТРАНИЦА */
+
+body {
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Open Sans', sans-serif;
+	letter-spacing: 0.05em;
+}
+
+/* Заголовок */
+
+#main {
+	font-family: 'Julius Sans One', sans-serif;
+	font-size: 60px;
+	text-align: center;
+	position: relative;
+	top: 30px;
+}
+
+#main h1 {
+	margin-top: 1px;
+    margin-bottom: 20px;
+    font-weight:100
+}
+
+#main h2 {
+    font-size: 30px;
+    margin-bottom: -10px;
+}
+
+#main p {
+	font-size: 20px;
+}
+
+/* Главное меню, панель навигации */
+
+.menu {
+	margin-top: 30px;
+	text-align: center;
+}
+
+.menu ul {
+	display: inline-block;
+	margin: 0px;
+	padding: 0px;
+}
+
+.menu li {
+	display: inline;
+	font-family: 'Oswald', sans-serif;
+	font-size: 23px;
+	margin: 20px;
+}
+
+.menu a:link, a:visited {
+	color: #333333;
+	text-decoration: none;
+	transition-duration: 0.15s;
+}
+
+.menu a:hover {
+	color: #FFAF35;
+}
+
+/* Вступление */
+
+#intro {
+	margin: 60px auto 45px auto;
+	width: 75%;
+	color: #333333;
+	line-height: 1.3;
+	word-wrap: normal;
+}
+
+#intro span{
+	color: #FFAF35;
+}
+
+/* О ресторане */
+
+#aboutus {
+	margin: 0px auto 60px auto;
+	width: 40%;
+	background-color: #DDDDDD;
+	border: 10px double white;
+	display: flex;
+	flex-direction: column;
+}
+
+#title {
+	order: 1;
+	margin: -25px auto 0px auto;
+	padding: 0px 20px;
+	font-family: 'Julius Sans One', sans-serif;
+	border: 1px solid #FFAF35;
+	background-color: white;
+}
+
+
+#blurb {
+	order: 2;
+	display: inline-block;
+	margin: 20px;
+	padding: 0px 15px;
+	font-size: 14px;
+	line-height: 2.0;
+}
+
+/* Секция трёх карточек */
+
+.services {
+	max-width: 1300px;
+	display: flex;
+	margin: 75px auto 60px auto;
+	width: 90%;
+	height: 285px;
+	color: #333333;
+}
+
+.service-card {
+	width: 340px;
+	margin: 0px auto;
+	border: 1px solid #DDDDDD;
+	flex-basis: auto;
+}
+
+.service-icon {
+	margin: -40px auto 0px auto;
+	width: 80px;
+	height: 80px;
+	border: 2px solid #FFAF35;
+	border-radius: 50%;
+	background-size: 56px;
+	background-repeat: no-repeat;
+	background-position: 50%;
+	background-color: white;
+}
+
+.services h1 {
+	margin-top: 10px;
+	font-family: 'Oswald', sans-serif;
+	font-size: 25px;
+	letter-spacing: 0.08em;
+}
+
+.services p {
+	padding: 5px 30px;
+	height: 75px;
+	font-size: 14px;
+	line-height: 1.7;
+}
+
+.services form{
+	height: 40px;
+	margin-top: 30px;
+}
+
+button{
+	height: 100%;
+	width: 60%;
+	border: 1px solid #818181;
+	border-radius: 5px;
+	background-color: white;
+	font-family: 'Julius One Sans', sans-serif;
+	letter-spacing: 0.05em;
+}
+
+button:hover {
+	transition-duration: 0.5s;
+	border-color: #333333;
+	background-color: #333333;
+	color: white;
+}
+
+/* Контактная информация */
+
+.infosection {
+	margin: 50px auto 30px auto;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	background-color: #DDDDDD;
+	line-height: 1;
+}
+
+.title {
+	margin: 20px auto;
+	border: 1px solid #818181;
+	width: 280px;
+}
+
+.info {
+	order: 2;
+	margin: 5px auto 5px auto;
+	padding: 20px 100px;
+	border: 10px double white;
+	font-family: 'Julius Sans One', sans-serif;
+}
+
+.info p{
+	margin: 10px;
+	font-size: 17px;
+}
+
+.info h1{
+	font-size: 38px;
+	color: #333333;
+	line-height: 1.7;
+}
+
+a#contact-icon {
+	order: 3;
+	display: block;
+	margin: 20px auto;
+	height: 60px;
+	width: 60px;
+	background-image: url('местоположение.svg');
+	background-size: 60px;
+	background-repeat: no-repeat;
+}
+
+.phone p {
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* Подвал (меню и подпись) */
+
+.footer.menu {
+	display: inline-block;
+	padding: 15px;
+	margin-top: 0px;
+	margin-bottom: 15px;
+	border: 1px solid #FFAF35;
+}
+
+.final {
+	margin-bottom: 25px;
+}
+
+.final p {
+	color: #818181;
+	font-size: 10px;
+}
+
+
+
+
+															/* КОНТАКТЫ */
+															
+
+#yandexmap {
+	position: relative;
+	width: 55%;
+	height: 230px;
+	overflow: hidden;
+	padding-bottom: 15%;
+	margin: 60px auto;
+	border: 10px dashed #DDDDDD;
+}
+
+
+
+															/* НОВОСТИ */
+
+#news {
+	display: flex;
+	flex-direction: column;
+	margin: 50px auto 30px auto;
+	align-items: center;
+	justify-content: center;
+	font-size: 14px;
+}
+															
+.news-card {
+	width: 500px;
+	border: 1px solid #FFAF35;
+	border-radius: 20px;
+	padding: 15px 25px;
+	margin-bottom: 30px;
+	line-height: 1.7;
+}
+
+.news-card:nth-child(2n) {
+	background-color:#DDDDDD;
+	border: none;
+}
+
+/*.left {
+float: right;
+padding: 0 18px 18px 0;
+}*/
+
+
+														/* ОТЗЫВЫ */
+
+.forminfo {
+	max-width: 900px;
+	margin: 75px auto 25px auto;
+	width: 70%;
+	padding: 15px;
+	background-color: #EEEEEE;
+	border: 10px double white;
+	line-height: 1.7;
+	font-size: 14px;
+}
+
+.forminfo .title {
+	border-color: #FFAF35;
+	margin-bottom: 30px;
+}
+
+.forminfo .service-icon {
+	margin-top: -63px;
+	background-size: 50px;
+	background-position: 60%;
+}
+
+form {
+	max-width: 1300px;
+	margin: 0px auto 30px auto;
+	text-align: center;
+}
+
+.formtext {
+	width: 60%;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 15px;
+	outline: none;
+	border: 1px solid #818181;
+	padding: 10px;
+}
+
+.formtext:focus {
+	outline: none;
+	border: 1px solid #FFAF35;
+	box-shadow: 0 0 1px #FFAF35;
+}
+
+#note-form button {
+	width: 25%;
+	font-size: 12px;
+	padding: 15px 0px;
+}
+
+#note-form input:nth-child(1){
+	width: 30%;
+}
+
+
+														/* ЛИЧНЫЙ КАБИНЕТ */
+
+
+
+
+
+
+
+@media (max-width:910px){
+
+                                                            /* ГЛАВНАЯ СТРАНИЦА */
+
+	#main p {
+		font-size: 14px;
+	}
+
+	#main h1 {
+		font-size: 100px;
+	}
+
+	.menu {
+		line-height: 2.5;
+	}
+
+	#intro {
+		margin-top: 30px;
+	}
+
+	#aboutus {
+		width: 80%;
+	}
+
+	.services {
+		display: flex;
+		flex-direction: column;
+		height: auto;
+	}
+
+	.service-card {
+		margin-top: 70px;
+		width: 80%;
+		border: none;
+		border-bottom: 1px solid #DDDDDD;
+	}
+
+	#first-card {
+		margin-top: 0px;
+	}
+
+	.services form {
+		margin-top: 10px;
+		margin-bottom: 35px;
+	}
+
+	button {
+		width: 40%;
+	}
+
+	.info {
+		padding: 30px 60px;
+	}
+
+															/* КОНТАКТЫ */
+
+	/* Тут будет условие для карты*/
+
+														/* ОТЗЫВЫ */
+
+	.forminfo {
+		margin-top: 70px;
+		font-size: 14px;
+	}
+
+	.formtext {
+		width: 85%;
+		font-size: 14px;
+	}
+
+	#note-form input:nth-child(1){
+		width: 45%;
+	}
+
+	#note-form button {
+		width: 40%;
+	}
+
+}
+
+
+@media (max-width: 655px){
+
+	#regularmenu {
+		border-top: 2px solid #EEEEEE;
+		border-bottom: 2px solid #EEEEEE;
+	}
+
+	.footer.menu {
+		border: none;
+		border-top: 1px solid #FFAF35;
+		border-bottom: 1px solid #FFAF35;
+	}
+
+	.news-card {
+		width: 75%;
+	}
+
+}
+
+
+@media (max-width: 518px){
+
+                                                            /* ГЛАВНАЯ СТРАНИЦА */
+
+	#main h1 {
+		font-size: 95px;
+	}
+
+	.menu {
+		margin-top: 50px;
+		line-height: 2.3;
+	}
+
+	#intro {
+		margin-top: 30px;
+	}
+
+	#intro h1 {
+		font-size: 30px;
+	}
+
+	.service-card form {
+		margin-top: 30px;
+	}
+
+	button {
+		width: 80%;
+	}
+
+	.info {
+		padding: 30px;
+		border-left: none;
+		border-right: none;
+	}
+
+	.footer.menu {
+		padding-top: 20px;
+	} 
+
+	.finalnote p {
+		padding: 0px 10px;
+	}
+
+															/* КОНТАКТЫ */
+
+	/* Тут будет условие для карты*/
+
+														/* ОТЗЫВЫ */
+
+	.forminfo {
+		width: 90%;
+		padding: 10px;
+	}
+
+	.formtext {
+		width: 95%;
+	}
+}
