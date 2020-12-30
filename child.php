@@ -16,7 +16,11 @@
         
     $result_set = $mysqli->query("SELECT * FROM `child` ORDER BY id DESC;"); 
     while($row = mysqli_fetch_array($result_set))
-        {?>
+        {
+      $result_set1 = $mysqli->query('SELECT * FROM `parent` WHERE id_child="'.$row['id'].'"'); 
+   
+            ?>
+
 		<div class="news-card">
             <h3><strong> Имя ребенка - <?php print_r($row['name']);  ?></strong></h3>
 			<p>
@@ -31,7 +35,19 @@
             <p>
                 Количество дней проведенных в саду - <?php print_r($row['days']);  ?>
             </p>
-		</div>
+            <p><!-- По данной ссылке происходит удаление, мы передаем данные GET-ом на страницу del.php --> <a style="text-decoration: none;"href="del.php?id=<?php print_r($row['id']);?>" id="card-link-click">Удалить</a>
+            <br> <a style="text-decoration: none;"href="upd.php?id=<?php print_r($row['id']);?>" id="card-link-click">Изменить</a>
+            </p>
+		<h2> Кто может забирать ребенка из сада: </h2>
+       <?php
+             while($row1 = mysqli_fetch_array($result_set1))
+        { ?>
+             <div style="    background-color: #ffaf35;
+"> <h3><strong><?php print_r($row1['name']);  ?></strong></h3>
+<p> <a style="text-decoration: none;" href="del_par.php?id_par=<?php print_r($row1['id_par']);?>" id="card-link-click">Удалить</a>
+             <a style="text-decoration: none;"href="upd_par.php?id_par=<?php print_r($row1['id_par']);?>" id="card-link-click">Изменить</a>
+            </p>
+        </div><?php }?></div>
 		<?php }?>
 	</div>
     <form id="note-form" onsubmit="return control()" method="post" name="note-form" action="?add">
@@ -47,9 +63,38 @@
         <br> 
         <button type="submit">Добавить</button>
     </form>
-
+    <br>
+  <form id="note-form" onsubmit="return control()" method="post" name="note-form" action="?add_par">
+        Имя родителя - <input class="formtext" type="text" name="name" onkeyup="setCapitalLetter(this.value, this)" style="margin-bottom: 15px;" required />
+        <br>
+       Ребенок -
+<p><select size="3" multiple name="child">
+    <option disabled>Выберите ребенка</option>
+   
+  
+      <?php $result_set = $mysqli->query("SELECT * FROM `child` ORDER BY id DESC;"); 
+    while($row = mysqli_fetch_array($result_set))
+        { ?> 
+        <option value="<?php print_r($row['id']);  ?>"><strong> <?php print_r($row['name']);  ?></strong></option>
+        <?php } ?>
+    </select>
+        <br>
+        <br>
+        <button type="submit">Добавить</button>
+    </form>
 <?php
 //Если пользователь нажал на кнопку "Добавть" на форме
+if (isset($_GET['add_par'])) 
+{ 
+    $name = htmlspecialchars($_POST['name']);
+    $child = (int)($_POST['child']);
+    //Проверяем что бы дата рождения была в прошлом
+
+
+    $result_set = $mysqli->query("INSERT INTO `parent` VALUES (NULL,'$name','$child')"); 
+    ?><script>document.location.href="child.php"</script><?php
+
+}
 if (isset($_GET['add'])) 
 { 
     $name = htmlspecialchars($_POST['name']);
